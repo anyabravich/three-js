@@ -13,14 +13,21 @@
 }
 
 .configurator {
-  position: fixed;
+  position: absolute;
   right: 24px;
-  bottom: 25vh;
+  top: 5vh;
   width: 360px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow-y: auto;
+  height: calc(100vh - 15vh);
+}
+
+.configurator::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .configurator__section__title {
