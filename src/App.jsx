@@ -1,16 +1,23 @@
-import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
 import "./App.css";
+import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience";
+import Configurator from "./components/Configurator";
+import { CustomizationProvider } from "./contexts/Customization";
 
 function App() {
   return (
-    <div className="App">
-      <Canvas>
-        <color attach="background" args={["#15222e"]} />
-        <fog attach="fog" args={["#101010", 10, 20]} />
-        <Experience />
-      </Canvas>
-    </div>
+    <CustomizationProvider>
+      <div className="App">
+        <Canvas dpr={[1, 2]}>
+          <color attach="background" args={["#213547"]} />
+          <fog attach="fog" args={["#213547", 10, 20]} />
+          <Experience />
+        </Canvas>
+        <Configurator />
+      </div>
+    </CustomizationProvider>
   );
 }
 
